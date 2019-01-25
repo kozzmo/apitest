@@ -1,10 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}! I am MLIUEJ ! test john | noob fhfehehehehehe
-    coucou j0hnb00k !!    
-  </h1> 
+<div class="jumbotron">
+<div class="container">
+    <h1>
+      Bienvenue sur Apibet
+    </h1>
+  <ngb-alert type="warning" [dismissible]="false">
+    En cours de construction !
+  </ngb-alert>
+  <ngb-progressbar showValue="true" type="success" [value]="7">
+  </ngb-progressbar>  
 </div>
+<<<<<<< HEAD
 <div>allogit</div>
 <h2>Here are some links to help you start: </h2>
 <ul>
@@ -19,5 +24,22 @@
   </li>
 </ul>
 <p><ngb-progressbar type="success" [value]="25"></ngb-progressbar></p>
+=======
+</div>
+>>>>>>> master
 
-<router-outlet></router-outlet>
+<div class="container">
+  <ngb-tabset>
+    <ngb-tab title="Accueil">
+      <ng-template ngbTabContent>
+        <p class="mt-4">Bienvenue Fly ! (ou j0hnb00k ?)
+        </p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Équipes">
+      <ng-template ngbTabContent>
+        <p>Content for tab 2</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div> 
