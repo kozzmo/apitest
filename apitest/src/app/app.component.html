@@ -30,15 +30,48 @@
 
 <div class="container">
   <ngb-tabset>
-    <ngb-tab title="Accueil">
+      <ngb-tab title="Accueil">
+        <ng-template ngbTabContent>
+          <app-accueil></app-accueil>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Profil">
+        <ng-template ngbTabContent>
+          <app-profil></app-profil>>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Apirank">
+        <ng-template ngbTabContent>
+          <app-apirank></app-apirank>>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Compétition">
+        <ng-template ngbTabContent>
+          <app-competition></app-competition>
+        </ng-template>
+      </ngb-tab>
+    <ngb-tab title="Règlement">
       <ng-template ngbTabContent>
-        <p class="mt-4">Bienvenue Fly ! (ou j0hnb00k ?)
-        </p>
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Équipes">
-      <ng-template ngbTabContent>
-        <p>Content for tab 2</p>
+          <h1>Apibet 2020 - Règlement</h1>
+          <h2>PREMIERE PHASE : Avant la Coupe du Monde </h2>
+          
+          - Pronos sur chaque match de groupe (*)
+          - Classement des groupes (**)
+          - Meilleurs buteurs (**) 
+          - Vainqueur de la CDM (**) 
+          - Questions (**) 
+          - Dream Team (**) 
+          
+          <h2>DEUXIEME PHASE : Après les groupes (à partir du 28 juin)</h2>
+          
+          - On pronostique phase par phase 
+          - L'arbre étant déjà connu, les pronos seront disponibles dès que les équipes se sont qualifiées.
+          
+          (*): Les pronostics des matchs peuvent être modifiés jusqu'à 1h avant le coup d'envoi.
+          
+          (**): A remplir 1h avant le début de la compétition (14/6 - 16h)
+          
+          <ngb-alert type="info" [dismissible]="false">Questionnaire, classement ou dream team non rempli avant la date limite = irréversible à part avec un très gros pot-de-vin.</ngb-alert>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>
