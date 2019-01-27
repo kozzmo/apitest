@@ -1,4 +1,8 @@
 <div class="jumbotron">
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item>Se déconnecter</button>
+    <button mat-menu-item>Help</button>
+  </mat-menu>
   <div class="container">
       <h1>
         Bienvenue sur Apibet
@@ -9,6 +13,13 @@
     <ngb-progressbar showValue="true" type="success" [value]="7">
     </ngb-progressbar>  
   </div>
+</div>
+
+<div class="container">
+  
+  <button mat-icon-button	 [matMenuTriggerFor]="appMenu">
+    <mat-icon>settings</mat-icon>
+  </button>
 </div>
 
 <div class="container">
