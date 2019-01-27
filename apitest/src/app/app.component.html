@@ -2,7 +2,10 @@
   <mat-menu #appMenu="matMenu">
     <button mat-menu-item>Se déconnecter</button>
     <button mat-menu-item>Help</button>
-  </mat-menu>
+  </mat-menu>  
+  <button class="float-right" mat-icon-button	 [matMenuTriggerFor]="appMenu">
+    <mat-icon>settings</mat-icon>
+  </button>
   <div class="container">
       <h1>
         Bienvenue sur Apibet
@@ -16,11 +19,17 @@
 </div>
 
 <div class="container">
-  
-  <button mat-icon-button	 [matMenuTriggerFor]="appMenu">
-    <mat-icon>settings</mat-icon>
-  </button>
-</div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-7">
+      2 of 3 (wider)
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
 
 <div class="container">
   <ngb-tabset justify="center">
@@ -48,19 +57,19 @@
       <ng-template ngbTabContent>
           <h1>Apibet 2020 - Règlement</h1>
           <h2>PREMIERE PHASE : Avant la Coupe du Monde </h2>
-          
-          - Pronos sur chaque match de groupe (*)
-          - Classement des groupes (**)
-          - Meilleurs buteurs (**) 
-          - Vainqueur de la CDM (**) 
-          - Questions (**) 
-          - Dream Team (**) 
-          
+          <ul>
+          <li>>Pronos sur chaque match de groupe (*)</li>
+          <li>Classement des groupes (**)</li>
+          <li>Meilleurs buteurs (**) </li>
+          <li>Vainqueur de la CDM (**) </li>
+          <li>Questions (**) </li>
+          <li>>Dream Team (**) </li>
+          </ul>
           <h2>DEUXIEME PHASE : Après les groupes (à partir du 28 juin)</h2>
-          
-          - On pronostique phase par phase 
-          - L'arbre étant déjà connu, les pronos seront disponibles dès que les équipes se sont qualifiées.
-          
+          <ul>
+          <li>>On pronostique phase par phase </li>
+          <li>L'arbre étant déjà connu, les pronos seront disponibles dès que les équipes se sont qualifiées.</li>
+        </ul>
           (*): Les pronostics des matchs peuvent être modifiés jusqu'à 1h avant le coup d'envoi.
           
           (**): A remplir 1h avant le début de la compétition (14/6 - 16h)
