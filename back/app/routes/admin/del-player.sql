@@ -1,0 +1,1 @@
+DELETE FROM JOUEURS where nom = ':nom' AND annee = ':annee' AND position = ':pos' AND equipe = ':team'

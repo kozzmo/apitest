@@ -1,0 +1,8 @@
+mysql:
+  host: 192.168.1.10 
+  user: root 
+  password: hunter123
+  database: apibet
+
+jwt:
+  secret: secretkey

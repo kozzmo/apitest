@@ -1,0 +1,1 @@
+INSERT INTO COMPETITIONS VALUES (':type',':annee',':apirank', UPPER(':hote')) 

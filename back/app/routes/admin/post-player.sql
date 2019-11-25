@@ -1,0 +1,1 @@
+INSERT INTO JOUEURS (nom,equipe,position,annee,prenom,but,assist,cj,cr,cs,og,ghost,winner,ge) VALUES (':nom',':team',':pos',':annee','','','','','','','','','','')

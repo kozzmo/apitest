@@ -1,0 +1,78 @@
+{{ competition }} {{ annee }} <br>
+
+<span (click)="showEquipes()">Equipes</span> - 
+<span (click)="showMatchs()">Matchs</span> - 
+<span (click)="showQuestions()">Questions</span> - 
+<span (click)="showNews()">News</span>
+<br>
+
+<!-- Affichage Equipes -->
+<span *ngIf="showEquipe">
+    <div *ngFor="let equipe of getEquipes; let i = index">{{ equipe.nom }} [{{ getNbJoueurs[i].length }}] <button class="btn btn-warning" (click)="showSelections(equipe.nom, i)">Show</button>
+            <div *ngFor="let player of getSelection; last as isLast">
+                <!-- Affichage de la selection-->
+                <span *ngIf="player.nomEquipe == equipe.nom">    
+                  <table>              
+                    <tr>
+                      <!-- DELETE JOUEUR BUTTON-->
+                      <td class="col-2"><button class="btn btn-danger" (click)='delPlayer(player.nom, player.acrEquipe, player.pos)'>Delete</button></td>
+                      <td class="col">{{ player.nom }}</td>
+                      <td class="col">{{ player.pos }}</td>
+                    </tr>
+                  </table>  
+                </span>
+
+                <!-- Add player row-->
+                <span *ngIf="(isLast && player.nomEquipe == equipe.nom)">
+                  <div>                    
+                    <form [formGroup]="newPlayerForm"> 
+                        <button class="btn btn-success" (click)='addPlayer(player.acrEquipe)'>Add</button>
+                        <select formControlName="position">
+                        <option *ngFor="let position of getPositions; let i = index">{{ position }}</option>
+                        </select>
+                        <!-- Select existingPlayers n'est affiché que si des joueurs sont déjà encodés -->
+                        <select *ngIf="getExistingPlayers.length > '0'" formControlName="existingPlayer">
+                          <option>Joueur</option>
+                          <option *ngFor="let existingplayer of getExistingPlayers; let i = index">{{ existingplayer.nomJoueur }}</option>
+                        </select>
+                        <input #newPlayer formControlName="newPlayer" placeholder="Joueur">
+                    </form>                 
+                  </div>
+                </span>
+
+
+            </div>
+            <!-- Si pas de joueur dans la selection on affiche un warning à l'user + la row pour ajouter un joueur -->
+            <!-- <span *ngIf="selectionEmpty[0].nom == equipe.nom"> -->
+                <span *ngIf="getNbJoueurs[i].length == 0 && selectionEmpty[0].nom == equipe.nom">
+                <div>Aucun joueurs!</div>
+                <div>    
+                    <!-- AddPlayer -->                
+                    <form [formGroup]="newPlayerForm"> 
+                        <button class="btn btn-success" (click)='addPlayer(equipe.Acronyme)'>Add</button>
+                        <select formControlName="position">
+                        <option *ngFor="let position of getPositions; let i = index">{{ position }}</option>
+                        </select>
+                        <!-- Select existingPlayers n'est affiché que si des joueurs sont déjà encodés -->
+                        <select *ngIf="getExistingPlayers.length > '0'" formControlName="existingPlayer">
+                          <option [selected]="true">Joueur</option>
+                          <option *ngFor="let existingplayer of getExistingPlayers; let i = index">{{ existingplayer.nomJoueur }}</option>
+                        </select>
+                        <input #newPlayer formControlName="newPlayer" placeholder="Joueur">
+                    </form>                 
+                </div>
+              </span>
+    </div>
+    <br>
+</span>
+
+<!-- Affichage Matches && Détails -->
+<span *ngIf="showMatch">show matchs</span> 
+
+<!-- Affichage Questions -->
+<span *ngIf="showQuestion">show questions</span> 
+
+<!-- Affichage News -->
+<span *ngIf="showNew">show news</span> 
+
+

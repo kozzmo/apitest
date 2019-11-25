@@ -1,0 +1,1 @@
+DELETE FROM COMPETITIONS where type = ':type' AND annee = ':annee'  

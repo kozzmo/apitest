@@ -1,0 +1,1 @@
+select pseudo from users 

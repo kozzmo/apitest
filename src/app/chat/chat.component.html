@@ -1,0 +1,26 @@
+<!--
+// T0D0
+
++ bel affichage
+whoIsOnline, Emoticones, colors
+
+-->
+<p>
+  chat works!
+</p>
+
+<div class="chat-wrapper">
+  <div class="chat-messages">
+    <p *ngFor="let message of messages">
+      {{message}}
+    </p>
+  </div>
+  <div class="chat-form">
+    <form (ngSubmit)="onSubmit()" #chatForm="ngForm">
+      <textarea [(ngModel)]="message.value" name="message"></textarea>
+      <button class="btn btn-success" type="submit">Send</button>
+    </form>
+
+    <pre>{{diagnostig}}</pre>
+  </div>
+</div>

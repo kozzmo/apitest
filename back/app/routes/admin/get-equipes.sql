@@ -1,0 +1,1 @@
+SELECT nom, Acronyme, classement, groupe FROM EQUIPES WHERE annee = ':annee' ORDER BY groupe, classement ASC, nom 

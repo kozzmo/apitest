@@ -1,0 +1,17 @@
+<p>LOGIN</p>
+<p>{{ myData.user }}</p>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+  <label>
+    User:
+    <input type="text" formControlName="user">
+  </label>
+
+  <label>
+    Password:
+    <input type="password" formControlName="pwd">
+  </label>
+  <button type="submit">Submit</button>
+
+</form>
